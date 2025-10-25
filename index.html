@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Association Team Reveal</title>
+    <title>GREFOWA Executive Committee</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -62,7 +62,7 @@
         }
         @media (min-width: 1024px) {
             .team-grid {
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     </style>
@@ -72,10 +72,10 @@
         <!-- Header -->
         <header class="text-center py-8 mb-8 bg-white rounded-xl shadow-lg">
             <h1 class="text-4xl font-extrabold text-teal-700 tracking-tight">
-                MEET YOUR NEW ASSOCIATION TEAM
+                GREFOWA EXECUTIVE COMMITTEE
             </h1>
             <p class="mt-2 text-xl text-gray-500">
-                Click a card to unveil their role, focus, and vision.
+                Term 2025-2027 • Click a card to see details
             </p>
         </header>
 
@@ -87,11 +87,126 @@
 
     <script>
         const teamMembers = [
-            { id: 1, name: "Dr. Atchyut", role: "President", focus: "Strategic Planning, Liaison with Management, and long-term community growth initiatives.", tagline: "Leading with Vision, Dedicated to Our Community.", photoUrl: "/files/Achyut .jpg", color: "bg-teal-500" },
-            { id: 2, name: "Priya Singh", role: "Secretary", focus: "Improving Digital Communication & Documentation Clarity.", tagline: "Organizing the Details, Connecting Our Community.", photoUrl: "https://placehold.co/400x400/3B82F6/ffffff?text=Secretary", color: "bg-blue-500" },
-            { id: 3, name: "Anil Kumar", role: "Treasurer", focus: "Fiscal Transparency & Reserve Fund Optimization.", tagline: "Stewarding Our Finances, Securing Our Future.", photoUrl: "https://placehold.co/400x400/F59E0B/ffffff?text=Treasurer", color: "bg-amber-500" },
-            { id: 4, name: "Sara Khan", role: "Amenities Lead", focus: "Enhancing Common Spaces & Resident Event Coordination.", tagline: "Making Our Home Vibrant for Everyone to Enjoy.", photoUrl: "https://placehold.co/400x400/EF4444/ffffff?text=Amenities", color: "bg-red-500" },
-            { id: 5, name: "David Lee", role: "Maintenance Liaison", focus: "Expediting Critical Repairs & Security Protocol Review.", tagline: "Dedicated to Safety, Committed to Upkeep.", photoUrl: "https://placehold.co/400x400/6366F1/ffffff?text=Maintenance", color: "bg-indigo-500" },
+            { 
+                id: 1, 
+                name: "Dr. Atchyuth Gongada", 
+                role: "President", 
+                flat: "304", 
+                focus: "Strategic Planning, Liaison with Management, and long-term community growth initiatives.", 
+                tagline: "Leading with Vision, Dedicated to Our Community.", 
+                photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+                color: "bg-teal-500" 
+            },
+            { 
+                id: 2, 
+                name: "Mr. D. Hema Bhupal", 
+                role: "Vice President", 
+                flat: "411", 
+                focus: "Supporting strategic initiatives and coordinating with various departments.", 
+                tagline: "Working Together for a Better Community.", 
+                photoUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+                color: "bg-violet-500" 
+            },
+            { 
+                id: 3, 
+                name: "Mr. Nori Ravi Kumar", 
+                role: "Secretary", 
+                flat: "305", 
+                focus: "Documentation, Communication, and Meeting Coordination.", 
+                tagline: "Organizing the Details, Connecting Our Community.", 
+                photoUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+                color: "bg-blue-500" 
+            },
+            { 
+                id: 4, 
+                name: "Mr. ABK Sarma", 
+                role: "Joint Secretary", 
+                flat: "712", 
+                focus: "Assisting in administrative tasks and resident communications.", 
+                tagline: "Supporting Our Community's Administrative Excellence.", 
+                photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+                color: "bg-cyan-500" 
+            },
+            { 
+                id: 5, 
+                name: "Mr. B J V B Kiran", 
+                role: "Joint Secretary", 
+                flat: "427", 
+                focus: "Coordinating events and maintaining records.", 
+                tagline: "Ensuring Smooth Operations and Clear Communication.", 
+                photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+                color: "bg-teal-600" 
+            },
+            { 
+                id: 6, 
+                name: "Mr. Mukesh Kumar", 
+                role: "Treasurer", 
+                flat: "405", 
+                focus: "Financial Management, Budget Planning, and Reserve Fund Optimization.", 
+                tagline: "Stewarding Our Finances, Securing Our Future.", 
+                photoUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+                color: "bg-amber-500" 
+            },
+            { 
+                id: 7, 
+                name: "Mr. G. Kamaraj", 
+                role: "EC Member", 
+                flat: "527", 
+                focus: "Contributing to executive decisions and community initiatives.", 
+                tagline: "Committed to Our Collective Progress.", 
+                photoUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop",
+                color: "bg-red-500" 
+            },
+            { 
+                id: 8, 
+                name: "Mrs. M. Vinuta", 
+                role: "EC Member", 
+                flat: "424", 
+                focus: "Supporting community welfare and engagement programs.", 
+                tagline: "Building Connections, Strengthening Community.", 
+                photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+                color: "bg-pink-500" 
+            },
+            { 
+                id: 9, 
+                name: "Mrs. S. Padma", 
+                role: "EC Member", 
+                flat: "125", 
+                focus: "Enhancing resident services and quality of life.", 
+                tagline: "Dedicated to Making Our Home Better.", 
+                photoUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+                color: "bg-purple-500" 
+            },
+            { 
+                id: 10, 
+                name: "Mrs. N. Anuradha", 
+                role: "EC Member", 
+                flat: "522", 
+                focus: "Promoting community activities and resident engagement.", 
+                tagline: "Fostering Unity and Collaboration.", 
+                photoUrl: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop",
+                color: "bg-emerald-500" 
+            },
+            { 
+                id: 11, 
+                name: "Mrs. J. Sowjanya", 
+                role: "EC Member", 
+                flat: "807", 
+                focus: "Supporting amenities and common area improvements.", 
+                tagline: "Creating Spaces We All Enjoy.", 
+                photoUrl: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
+                color: "bg-orange-500" 
+            },
+            { 
+                id: 12, 
+                name: "Mr. M V Ramana", 
+                role: "EC Member", 
+                flat: "811", 
+                focus: "Maintenance oversight and security coordination.", 
+                tagline: "Ensuring Safety and Proper Upkeep.", 
+                photoUrl: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop",
+                color: "bg-indigo-500" 
+            },
         ];
 
         const grid = document.getElementById('team-grid');
@@ -115,8 +230,9 @@
                         <!-- Front Face -->
                         <div class="card-front ${member.color} text-white p-4">
                             <img src="${member.photoUrl}" alt="${member.name}" class="w-24 h-24 rounded-full object-cover border-4 border-white mb-2 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
-                            <h3 class="text-xl font-bold">${member.name}</h3>
+                            <h3 class="text-xl font-bold text-center">${member.name}</h3>
                             <p class="text-sm font-light italic">${member.role}</p>
+                            <p class="text-xs mt-1 opacity-90">Flat ${member.flat}</p>
                         </div>
                         
                         <!-- Back Face with Image and Description -->
@@ -124,7 +240,7 @@
                             <img src="${member.photoUrl}" alt="${member.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
                             <div class="p-4 flex-1 flex flex-col">
                                 <h3 class="text-xl font-bold text-teal-700 mb-1">${member.name}</h3>
-                                <p class="text-sm font-semibold text-gray-600 mb-2">${member.role}</p>
+                                <p class="text-sm font-semibold text-gray-600 mb-1">${member.role} • Flat ${member.flat}</p>
                                 <p class="text-sm text-gray-700 italic mb-2">"${member.tagline}"</p>
                                 <p class="text-xs text-gray-600 leading-relaxed">${member.focus}</p>
                             </div>
@@ -137,7 +253,7 @@
 
         window.onload = () => {
             teamMembers.forEach(renderCard);
-            console.log("Interactive Team Introduction app loaded.");
+            console.log("GREFOWA Executive Committee app loaded.");
         };
     </script>
 </body>
