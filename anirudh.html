@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association Team Reveal</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for 3D Flip Effect */
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .card-front {
+            justify-content: center;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: white;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Responsive Grid Columns */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 p-4 min-h-screen">
+    <div id="app" class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="text-center py-8 mb-8 bg-white rounded-xl shadow-lg">
+            <h1 class="text-4xl font-extrabold text-teal-700 tracking-tight">
+                MEET YOUR NEW ASSOCIATION TEAM
+            </h1>
+            <p class="mt-2 text-xl text-gray-500">
+                Click a card to unveil their role, focus, and vision.
+            </p>
+        </header>
+
+        <!-- Team Grid Container -->
+        <div id="team-grid" class="team-grid">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const teamMembers = [
+            { id: 1, name: "Dr. Atchyut", role: "President", focus: "Strategic Planning, Liaison with Management, and long-term community growth initiatives.", tagline: "Leading with Vision, Dedicated to Our Community.", photoUrl: "/files/Achyut .jpg", color: "bg-teal-500" },
+            { id: 2, name: "Priya Singh", role: "Secretary", focus: "Improving Digital Communication & Documentation Clarity.", tagline: "Organizing the Details, Connecting Our Community.", photoUrl: "https://placehold.co/400x400/3B82F6/ffffff?text=Secretary", color: "bg-blue-500" },
+            { id: 3, name: "Anil Kumar", role: "Treasurer", focus: "Fiscal Transparency & Reserve Fund Optimization.", tagline: "Stewarding Our Finances, Securing Our Future.", photoUrl: "https://placehold.co/400x400/F59E0B/ffffff?text=Treasurer", color: "bg-amber-500" },
+            { id: 4, name: "Sara Khan", role: "Amenities Lead", focus: "Enhancing Common Spaces & Resident Event Coordination.", tagline: "Making Our Home Vibrant for Everyone to Enjoy.", photoUrl: "https://placehold.co/400x400/EF4444/ffffff?text=Amenities", color: "bg-red-500" },
+            { id: 5, name: "David Lee", role: "Maintenance Liaison", focus: "Expediting Critical Repairs & Security Protocol Review.", tagline: "Dedicated to Safety, Committed to Upkeep.", photoUrl: "https://placehold.co/400x400/6366F1/ffffff?text=Maintenance", color: "bg-indigo-500" },
+        ];
+
+        const grid = document.getElementById('team-grid');
+
+        function toggleCard(id) {
+            const cardElement = document.querySelector(`[data-id="${id}"]`);
+            if (cardElement) {
+                cardElement.classList.toggle('flipped');
+            }
+        }
+
+        function renderCard(member) {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card h-80 sm:h-96 cursor-pointer';
+            cardElement.setAttribute('data-id', member.id);
+            cardElement.onclick = () => toggleCard(member.id);
+
+            cardElement.innerHTML = `
+                <div class="card-container">
+                    <div class="card-inner">
+                        <!-- Front Face -->
+                        <div class="card-front ${member.color} text-white p-4">
+                            <img src="${member.photoUrl}" alt="${member.name}" class="w-24 h-24 rounded-full object-cover border-4 border-white mb-2 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
+                            <h3 class="text-xl font-bold">${member.name}</h3>
+                            <p class="text-sm font-light italic">${member.role}</p>
+                        </div>
+                        
+                        <!-- Back Face with Image and Description -->
+                        <div class="card-back">
+                            <img src="${member.photoUrl}" alt="${member.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
+                            <div class="p-4 flex-1 flex flex-col">
+                                <h3 class="text-xl font-bold text-teal-700 mb-1">${member.name}</h3>
+                                <p class="text-sm font-semibold text-gray-600 mb-2">${member.role}</p>
+                                <p class="text-sm text-gray-700 italic mb-2">"${member.tagline}"</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">${member.focus}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(cardElement);
+        }
+
+        window.onload = () => {
+            teamMembers.forEach(renderCard);
+            console.log("Interactive Team Introduction app loaded.");
+        };
+    </script>
+</body>
+</html>
