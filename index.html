@@ -89,6 +89,7 @@
                 name: "Dr. Atchyuth Gongada", 
                 role: "President", 
                 photoUrl: "images/President.jpg",
+                imageStyle: "object-cover object-center",
                 color: "bg-teal-500" 
             },
             { 
@@ -96,6 +97,7 @@
                 name: "Mr. D. Hema Bhupal", 
                 role: "Vice President",  
                 photoUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-violet-500" 
             },
             { 
@@ -103,6 +105,7 @@
                 name: "Mr. Nori Ravi Kumar", 
                 role: "Secretary", 
                 photoUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-center",
                 color: "bg-blue-500" 
             },
             { 
@@ -110,6 +113,7 @@
                 name: "Mr. ABK Sarma", 
                 role: "Joint Secretary", 
                 photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-cyan-500" 
             },
             { 
@@ -117,6 +121,7 @@
                 name: "Mr. B J V B Kiran", 
                 role: "Joint Secretary", 
                 photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-center",
                 color: "bg-teal-600" 
             },
             { 
@@ -124,6 +129,7 @@
                 name: "Mr. Mukesh Kumar", 
                 role: "Treasurer", 
                 photoUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-amber-500" 
             },
             { 
@@ -131,6 +137,7 @@
                 name: "Mr. G. Kamaraj", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-center",
                 color: "bg-red-500" 
             },
             { 
@@ -138,6 +145,7 @@
                 name: "Mrs. M. Vinuta", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-pink-500" 
             },
             { 
@@ -145,6 +153,7 @@
                 name: "Mrs. S. Padma", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-center",
                 color: "bg-purple-500" 
             },
             { 
@@ -152,6 +161,7 @@
                 name: "Mrs. N. Anuradha", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-emerald-500" 
             },
             { 
@@ -159,6 +169,7 @@
                 name: "Mrs. J. Sowjanya", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-center",
                 color: "bg-orange-500" 
             },
             { 
@@ -166,6 +177,7 @@
                 name: "Mr. M V Ramana", 
                 role: "EC Member", 
                 photoUrl: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop",
+                imageStyle: "object-cover object-top",
                 color: "bg-indigo-500" 
             },
         ];
@@ -196,7 +208,7 @@
                         
                         <!-- Back Face with Image, Name and Position -->
                         <div class="card-back">
-                            <img src="${member.photoUrl}" alt="${member.name}" class="w-full h-64 object-contain bg-gray-100" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
+                            <img src="${member.photoUrl}" alt="${member.name}" class="w-full h-64 ${member.imageStyle}" onerror="this.onerror=null;this.src='https://placehold.co/400x400/9CA3AF/ffffff?text=Photo';">
                             <div class="p-6 flex-1 flex flex-col justify-center items-center">
                                 <h3 class="text-2xl font-bold text-teal-700 mb-2 text-center">${member.name}</h3>
                                 <p class="text-lg font-semibold text-gray-600 text-center">${member.role}</p>
